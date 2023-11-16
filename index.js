@@ -1,5 +1,5 @@
 // Stoplight exercise part 1
-
+// Adding some comments
 // button variables
 let stopButton = document.getElementById("stopButton")
 let slowButton = document.getElementById("slowButton")
