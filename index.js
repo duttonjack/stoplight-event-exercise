@@ -1,4 +1,5 @@
 //                                    PART 1
+//
 // Working through git github stuff
 // button variables
 let stopButton = document.getElementById("stopButton")
@@ -43,7 +44,6 @@ buttonArr.forEach((element) => {
 element.addEventListener('mouseenter', mouseEnter)
 element.addEventListener('mouseleave', mouseLeft)
 });
-
 
 
 //                                BONUS
