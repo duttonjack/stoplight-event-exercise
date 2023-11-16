@@ -1,5 +1,5 @@
 //                                    PART 1
-
+// Working through git github stuff
 // button variables
 let stopButton = document.getElementById("stopButton")
 let slowButton = document.getElementById("slowButton")
