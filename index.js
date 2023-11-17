@@ -1,57 +1,29 @@
-//                                    PART 1
-//
-// Working through git github stuff
-// button variables
-let stopButton = document.getElementById("stopButton")
-let slowButton = document.getElementById("slowButton")
-let goButton = document.getElementById("goButton")
+// Part 1 - Toggle on-off light display by pressing button
 
 
-//                  Function turning off and on each class type
-var lightFunction = function(typeOfLight, classType) {
-  var element = document.getElementById(typeOfLight);
-  element.classList.toggle(classType);
+let stopButton = document.getElementById('stopButton');
+let slowButton = document.getElementById('slowButton');
+let goButton = document.getElementById('goButton');
+let stopLight = document.getElementById('stopLight');
+let slowLight = document.getElementById('slowLight');
+let goLight = document.getElementById('goLight');
+
+
+
+var toggleStop = function(){
+  stopLight.classList.toggle("stop")
 }
-var isGoOn = false;
-var isSlowOn = false;
-var isStopOn = false;
-
-var mouseClick = function(event){
-  window[`is${event.target.textContent.toLowerCase()}On`] = !window[`is${event.target.textContent.toLowerCase()}On`];
-  window[`is${event.target.textContent.toLowerCase()}On`] ? console.log(`${event.target.textContent} bulb on`) : console.log(`${event.target.textContent} bulb off`)
-  lightFunction(`${event.target.textContent.toLowerCase()}Light`, event.target.textContent.toLowerCase());
-}
-//                  Creating an event listener for each button 
-stopButton.addEventListener('click', mouseClick);
-slowButton.addEventListener('click', mouseClick);
-goButton.addEventListener('click', mouseClick);
-
-//                                  PART 2
-
-//               function printing entered button to the console
-var mouseEnter = function(event){
-  console.log(`Entered ${event.target.textContent} button`)
+debugger;
+var toggleSlow = function(){
+  console.log('slow')
+  slowLight.classList.toggle("slow")
 }
 
-//                function printing left button to the console
-var mouseLeft = function(event){
-  console.log(`Left ${event.target.textContent} button`)
+var toggleGo = function(){
+  goLight.classList.toggle("go")
 }
 
-//              creating event listeners using functions made above
-var buttonArr = [stopButton, slowButton, goButton];
-buttonArr.forEach((element) => {
-element.addEventListener('mouseenter', mouseEnter)
-element.addEventListener('mouseleave', mouseLeft)
-});
+stopButton.addEventListener('click', toggleStop);
+slowButton.addEventListener('click', toggleSlow);
+goButton.addEventListener('click', toggleGo);
 
-
-//                                BONUS
-
-// When a user clicks a button that just turned on, log"<textContent> bulb on" to the console.
-// When a user clicks a button that just turned off, log"<textContent> bulb off" to the console.
-
-
-var mouseEnter = function(event){
-  console.log(`Entered ${event.target.textContent} button`)
-}
