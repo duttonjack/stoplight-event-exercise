@@ -8,14 +8,11 @@ let stopLight = document.getElementById('stopLight');
 let slowLight = document.getElementById('slowLight');
 let goLight = document.getElementById('goLight');
 
-
-
 var toggleStop = function(){
   stopLight.classList.toggle("stop")
 }
 
 var toggleSlow = function(){
-  console.log('slow')
   slowLight.classList.toggle("slow")
 }
 
@@ -48,3 +45,27 @@ slowButton.addEventListener('mouseleave', exitLog);
 goButton.addEventListener('mouseleave', exitLog);
 
 
+// Part 3 - Log when a user clicks a button <textContent> blub on/off
+
+var stopState = false
+var slowState = false
+var goState = false
+
+var stopState = function(event) {
+  stopState === false ? console.log(`${event.target.innerText} off`) : console.log(`${event.target.innerText} on`)
+  stopState = !stopState;
+}
+
+var slowState = function(event) {
+  slowState === false ? console.log(`${event.target.innerText} off`) : console.log(`${event.target.innerText} on`)
+  slowState = !slowState;
+}
+
+var goState = function(event) {
+  goState === false ? console.log(`${event.target.innerText} off`) : console.log(`${event.target.innerText} on`)
+  goState = !goState;
+}
+
+stopButton.addEventListener('click', stopState);
+slowButton.addEventListener('click', slowState);
+goButton.addEventListener('click', goState);
